@@ -78,6 +78,7 @@
     <Compile Include="AirlineNetwork\AirlineService.cs" />
     <Compile Include="Models\Airports.cs" />
     <Compile Include="AirlineNetwork\IAirlineService.cs" />
+    <Compile Include="Models\ShortestRoute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Routes.cs" />
   </ItemGroup>

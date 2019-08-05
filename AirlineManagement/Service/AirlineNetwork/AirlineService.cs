@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Service.Common;
+using System.Collections.Generic; 
+using System.Diagnostics.Contracts; 
+using System.IO; 
+using System.Linq; 
+using Service.Common; 
 using Service.Models;
 
 namespace Service.AirlineNetwork
 {
     public class AirlineService : IAirlineService
     {
-        private  readonly string _mAirlinePath = Path.Combine(Directory.GetCurrentDirectory(),@"Data\test\airline.csv");
-        private  readonly string _mAirPortsPath = Path.Combine(Directory.GetCurrentDirectory(),@"Data\test\airports.csv");
-        private  readonly string _mRoutesPath = Path.Combine(Directory.GetCurrentDirectory(),@"Data\test\routes.csv");
+        private static readonly string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent?.FullName; 
+        private readonly string _mAirlinePath = string.Concat(projectDirectory ,  @"\Data\test\Airline.csv");  
+        private readonly string _mAirPortsPath = string.Concat(projectDirectory , @"\Data\test\Airports.csv"); 
+        private readonly string _mRoutesPath = string.Concat(projectDirectory ,@"\Data\test\Routes.csv");        
         private static List<Airline> airlines;
         private static List<Airports> airports;
         private static List<Routes> routes;
